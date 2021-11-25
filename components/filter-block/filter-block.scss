@@ -1,0 +1,61 @@
+.filter-block {
+    @media (max-width: 809px) {
+        width: 224px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (max-width: 681px) {
+        margin: 0 20px;
+    }
+
+    .total-goods-text {
+        font-size: 14px;
+        color: #898989;
+
+        @media (max-width: 809px) {
+            order: 1;
+
+            margin-top: 24px;
+        }
+    }
+
+    .cameras-text {
+        font-weight: bold;
+        font-size: 32px;
+
+        margin-top: 5px;
+
+        @media (max-width: 809px) {
+            order: 0;
+            margin-top: 0;
+        }
+    }
+
+    .price-block {
+        margin: 13px 0 24px;
+
+        @media (max-width: 809px) {
+            order: 2;
+
+            margin-top: 18px;
+        }
+
+        .text {
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+
+    .brand-block {
+        @media (max-width: 809px) {
+            order: 3;
+        }
+
+        .text {
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+}

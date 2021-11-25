@@ -1,0 +1,28 @@
+.filter-by-price {
+    margin-top: 12px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border: 1px solid #DBDBDB;
+    border-radius: 4px;
+
+    overflow: auto;
+    transition: .3s;
+
+    &:hover {
+        border: 1px solid #A7A7A7;
+    }
+
+    input[type="text"] {
+        &:first-child {
+            border: none;
+        }
+
+        &:last-child {
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
+        }
+    }
+}
