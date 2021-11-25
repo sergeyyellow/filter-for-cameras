@@ -61,7 +61,7 @@ input {
 
 			padding-left: 27px;
 
-			transition: .3s all;
+			transition: .3s;
 			cursor: pointer;
 
 			&:hover {
@@ -86,7 +86,7 @@ input {
 				box-sizing: border-box;
 				border-radius: 4px;
 
-				transition: .3s all;
+				transition: .3s;
 			}
 		}
 	}
@@ -115,16 +115,35 @@ input {
 
 	@media (max-width: 809px) {
 		grid-template-columns: 1fr;
+		margin: 47px auto;
+	}
+
+	@media (max-width: 681px) {
+		max-width: 375px;
+		padding: 0;
 	}
 
 	.item-1 {
 		@media (max-width: 809px) {
 			width: 224px;
+
+			display: flex;
+			flex-direction: column;
+		}
+
+		@media (max-width: 681px) {
+			margin: 0 20px;
 		}
 
 		.total-goods-text {
 			font-size: 14px;
 			color: #898989;
+
+			@media (max-width: 809px) {
+				order: 1;
+
+				margin-top: 24px;
+			}
 		}
 
 		.cameras-text {
@@ -132,10 +151,21 @@ input {
 			font-size: 32px;
 
 			margin-top: 5px;
+
+			@media (max-width: 809px) {
+				order: 0;
+				margin-top: 0;
+			}
 		}
 
 		.price-block {
 			margin: 13px 0 24px;
+
+			@media (max-width: 809px) {
+				order: 2;
+
+				margin-top: 18px;
+			}
 
 			.text {
 				font-weight: bold;
@@ -152,7 +182,7 @@ input {
 				border-radius: 4px;
 
 				overflow: auto;
-				transition: .3s all;
+				transition: .3s;
 
 				&:hover {
 					border: 1px solid #A7A7A7;
@@ -173,6 +203,10 @@ input {
 		}
 
 		.brand-block {
+			@media (max-width: 809px) {
+				order: 3;
+			}
+
 			.text {
 				font-weight: bold;
 				font-size: 16px;
@@ -205,6 +239,14 @@ input {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
+		@media (max-width: 809px) {
+			gap: 20px;
+		}
+
+		@media (max-width: 681px) {
+			grid-template-columns: 1fr;
+		}
+
 		.card-block {
 			display: grid;
 			grid-template-columns: 1fr;
@@ -234,6 +276,18 @@ input {
 
 				max-width: 341px;
 				border: none;
+			}
+
+			@media (max-width: 681px) {
+				max-width: 100%;
+				padding: 0 20px 20px;
+
+				border-bottom: 1px solid #E6E6E6;
+				border-radius: unset;
+
+				&:last-child {
+					border-bottom: none;
+				}
 			}
 
 			.card-image {
@@ -285,7 +339,7 @@ input {
 
 					font-size: 14px;
 					cursor: pointer;
-					transition: .3s all;
+					transition: .3s;
 
 					&:hover {
 						border: 1px solid #A7A7A7;
@@ -299,17 +353,40 @@ input {
 
 					position: absolute;
 					right: 12px;
-					bottom: 22px;
+					bottom: 20px;
 
 					cursor: pointer;
-					transition: .2s all;
+					transition: .2s;
 
 					opacity: 1;
 					pointer-events: all;
-					
+
+					&:hover {
+						.outline {
+							fill: #FF4040;
+						}
+					}
+
 					@media (min-width: 1024px) {
 						opacity: 0;
 						pointer-events: none;
+					}
+
+					@media (max-width: 809px) {
+						bottom: 4px;
+						right: -6px;
+					}
+
+					.bg {
+						fill: #FFF;
+					}
+
+					.outline {
+						fill: #1B1B1B;
+						stroke: #000;
+						stroke-width: 0.1;
+
+						transition: .2s;
 					}
 				}
 			}
