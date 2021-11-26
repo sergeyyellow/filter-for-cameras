@@ -1,5 +1,6 @@
 import OneFilterByCamera from "../one-filter-by-camera/one-filter-by-camera";
 
+// Component containing a list of filters by brand
 const FilterByCameras = ({ filterByBrands }) => {
     return (
         <ul className="filter-by-cameras">

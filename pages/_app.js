@@ -1,5 +1,7 @@
+// Importing global styles
 import '../styles/globals.scss';
 
+// Importing component styles
 import '../components/filter-block/filter-block.scss';
 import '../components/filter-by-price/filter-by-price.scss';
 import '../components/filter-by-cameras/filter-by-cameras.scss';

@@ -1,3 +1,4 @@
+// Component containing one card with information about a specific product
 const OneProductCard = ({ image, title, price, isNew }) => {
     return (
         <div className="card-block">
@@ -13,6 +14,8 @@ const OneProductCard = ({ image, title, price, isNew }) => {
                 </svg>
             </div>
 
+            {/* If the product is new, then on the product card at the top left, */} 
+            {/* the inscription new will be displayed  */}
             {isNew &&
                 <p className="novelty">Новинка</p>
             }

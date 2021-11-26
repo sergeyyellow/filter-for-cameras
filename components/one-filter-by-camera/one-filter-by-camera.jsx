@@ -1,3 +1,4 @@
+// Component containing one specific filter by brand
 const OneFilterByCamera = ({ title }) => {
     return (
         <li className="item">

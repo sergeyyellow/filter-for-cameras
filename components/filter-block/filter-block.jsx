@@ -1,6 +1,7 @@
 import FilterByPrice from "../filter-by-price/filter-by-price";
 import FilterByCameras from "../filter-by-cameras/filter-by-cameras";
 
+// Component containing all available filters
 const FilterBlock = ({ data, setMinPrice, setMaxPrice }) => {
     return (
         <div className="filter-block">
@@ -20,8 +21,6 @@ const FilterBlock = ({ data, setMinPrice, setMaxPrice }) => {
                 <p className="text">Бренд</p>
                 <FilterByCameras filterByBrands={data.filters[3]} />
             </div>
-
-            <p className="btn-apply">Применить</p>
         </div>
     );
 };

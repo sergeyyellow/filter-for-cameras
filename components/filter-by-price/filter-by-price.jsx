@@ -1,9 +1,10 @@
 import { useState } from "react";
 
+// Component containing a filter by product price
 const FilterByPrice = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }) => {
     // Checking the entry of the minimum price
     function entryOfMinPrice(e) {
-        if (typeof +e.target.value === 'number' && !isNaN(e.target.value)) {
+        if (typeof +e.target.value === 'number' && !isNaN(e.target.value) && e.target.value != '') {
             setMinPrice(e.target.value);
             setCorrectMinPrice(true);
         } else if (e.target.value == '') {
@@ -17,7 +18,7 @@ const FilterByPrice = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }) => {
 
     // Checking the entry of the maximum price
     function entryOfMaxPrice(e) {
-        if (typeof +e.target.value === 'number' && !isNaN(e.target.value)) {
+        if (typeof +e.target.value === 'number' && !isNaN(e.target.value) && e.target.value != '') {
             setMaxPrice(e.target.value);
             setCorrectMaxPrice(true);
         } else if (e.target.value == '') {
