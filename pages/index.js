@@ -1,23 +1,26 @@
+import { useState } from 'react';
 import Head from 'next/head';
+
+import { filter } from './api/filter';
 
 import FilterBlock from '../components/filter-block/filter-block';
 import CardBlockContainer from '../components/card-block-container/card-block-container';
 
 export const getStaticProps = async () => {
-	try {
-		const response = await fetch('https://getlens-master.stage.dev.family/api/pages/obektivy');
-		const data = await response.json();
+	const repsonse = await filter();
 
-		return {
-			props: { data: data }
-		}
-	} catch (err) {
-		throw new Error('Ошибка обращения к серверу');
-	}
+	return {
+		props: { data: repsonse }
+	};
 };
 
 export default function Home({ data }) {
 	console.log(data);
+
+	const [minPrice, setMinPrice] = useState(false);
+	console.log('Min price: ' + minPrice);
+	const [maxPrice, setMaxPrice] = useState(false);
+	console.log('Max price: ' + maxPrice);
 
 	return (
 		<>
@@ -32,7 +35,7 @@ export default function Home({ data }) {
 			</Head>
 
 			<main className="grid-container">
-				<FilterBlock data={data} />
+				<FilterBlock data={data} setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} />
 				<CardBlockContainer products={data.products} />
 			</main>
 		</>

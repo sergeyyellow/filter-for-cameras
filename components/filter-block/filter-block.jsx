@@ -1,7 +1,7 @@
 import FilterByPrice from "../filter-by-price/filter-by-price";
 import FilterByCameras from "../filter-by-cameras/filter-by-cameras";
 
-const FilterBlock = ({ data }) => {
+const FilterBlock = ({ data, setMinPrice, setMaxPrice }) => {
     return (
         <div className="filter-block">
             <p className="total-goods-text">Товаров: {data.products.length}</p>
@@ -9,13 +9,19 @@ const FilterBlock = ({ data }) => {
 
             <div className="price-block">
                 <p className="text">Цена, ₽</p>
-                <FilterByPrice minPrice={data.filters[0].min} maxPrice={data.filters[0].max} />
+                <FilterByPrice
+                    minPrice={data.filters[0].min}
+                    maxPrice={data.filters[0].max}
+                    setMinPrice={setMinPrice}
+                    setMaxPrice={setMaxPrice} />
             </div>
 
             <div className="brand-block">
                 <p className="text">Бренд</p>
                 <FilterByCameras filterByBrands={data.filters[3]} />
             </div>
+
+            <p className="btn-apply">Применить</p>
         </div>
     );
 };
