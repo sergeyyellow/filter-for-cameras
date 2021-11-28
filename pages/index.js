@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-// 
 import { filter } from './api/filter';
 
 import FilterBlock from '../components/filter-block/filter-block';
@@ -15,16 +14,34 @@ export const getStaticProps = async () => {
 			props: { data: response }
 		};
 	} catch (err) {
-		console.log(err.message);
+		throw new Error(err);
 	}
 };
 
 // Home page
 export default function Home({ data }) {
-	// These states are responsible for checking the entered values 
-	// in the fields of the minimum and maximum prices
+	// These hooks are responsible for assigning the entered values 
+	// to the minimum and maximum price fields.
 	const [minPrice, setMinPrice] = useState(false);
 	const [maxPrice, setMaxPrice] = useState(false);
+
+	// This hook is responsible for assigning the selected brands
+	const [brands, setBrands] = useState([]);
+
+	// This hook is responsible for assigning data after the filter 
+	// has been applied
+	const [filterData, setFilterData] = useState(false);
+
+	// This hook is responsible for ensuring that the data is updated 
+	// when you click on the "Apply" button
+	const [dataUpdated, setDataUpdated] = useState(false);
+
+	useEffect(async () => {
+		if (dataUpdated) {
+			setFilterData(await filter(minPrice, maxPrice, brands));
+			setDataUpdated(false);
+		}
+	});
 
 	return (
 		<>
@@ -40,8 +57,15 @@ export default function Home({ data }) {
 			</Head>
 
 			<main className="grid-container">
-				<FilterBlock data={data} setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} />
-				<CardBlockContainer products={data.products} />
+				<FilterBlock
+					data={filterData ? filterData : data}
+					setMinPrice={setMinPrice}
+					setMaxPrice={setMaxPrice}
+					brands={brands}
+					setBrands={setBrands}
+					setDataUpdated={setDataUpdated} />
+				<CardBlockContainer
+					products={filterData ? filterData.products : data.products} />
 			</main>
 		</>
 	);

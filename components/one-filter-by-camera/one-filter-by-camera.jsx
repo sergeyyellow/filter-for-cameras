@@ -1,8 +1,12 @@
 // Component containing one specific filter by brand
-const OneFilterByCamera = ({ title }) => {
+const OneFilterByCamera = ({ title, value, setPseudoBrands }) => {
     return (
         <li className="item">
-            <input type="checkbox" id={title} name={title} />
+            <input
+                type="checkbox"
+                id={title}
+                name={title}
+                onClick={() => setPseudoBrands(value)} />
             <label htmlFor={title}>{title}</label>
         </li>
     );

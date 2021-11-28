@@ -58,4 +58,35 @@
             font-size: 16px;
         }
     }
+
+    .btn-apply {
+        width: max-content;
+        margin-top: 20px;
+        padding: 8px 14px;
+
+        border: 1px solid #DBDBDB;
+        box-sizing: border-box;
+        border-radius: 8px;
+
+        font-size: 14px;
+        cursor: pointer;
+        transition: .3s;
+
+        @media (max-width: 809px) {
+            order: 4;
+        }
+
+        &:hover {
+            border: 1px solid #A7A7A7;
+        }
+
+        &.locked {
+            opacity: .7;
+            cursor: not-allowed;
+
+            &:hover {
+                border-color: #DBDBDB;
+            }
+        }
+    }
 }

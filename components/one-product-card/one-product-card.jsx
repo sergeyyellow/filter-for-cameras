@@ -1,4 +1,4 @@
-// Component containing one card with information about a specific product
+// The component containing one card with information about a specific product
 const OneProductCard = ({ image, title, price, isNew }) => {
     return (
         <div className="card-block">

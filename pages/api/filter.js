@@ -1,16 +1,24 @@
-export const filter = (minPrice = false, maxPrice = false) => {
+export const filter = (minPrice = false, maxPrice = false, brands = []) => {
     try {
         // Server request implementation
         let arr = [];
         let request = '';
 
-        // If there is a specified variable, then there will be such a request
+        // If the specified variable was passed during the 
+        // function call, then a new parameter for the request 
+        // will be added to the array
         if (minPrice) {
             arr.push(`price[min]=${minPrice}`);
         }
 
         if (maxPrice) {
             arr.push(`price[max]=${maxPrice}`);
+        }
+
+        if (brands.length) {
+            brands.forEach(item => {
+                arr.push(`brands[]=${item}`);
+            })
         }
 
         // A snippet of code responsible for the correct composition 
@@ -31,6 +39,7 @@ export const filter = (minPrice = false, maxPrice = false) => {
             }
         }
 
+        // Making an API request
         const response = fetch(`https://getlens-master.stage.dev.family/api/pages/obektivy${request}`)
             .then(res => res.json())
             .then(data => data);
