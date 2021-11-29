@@ -41,7 +41,7 @@ export default function Home({ data }) {
 			setFilterData(await filter(minPrice, maxPrice, brands));
 			setDataUpdated(false);
 		}
-	});
+	}, [dataUpdated]);
 
 	return (
 		<>
@@ -51,9 +51,9 @@ export default function Home({ data }) {
 				<link rel="icon" href="/favicon.ico" />
 
 				{/* Connecting the Montserrat font */}
-				<style>
-					@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
-				</style>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+				<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
 			</Head>
 
 			<main className="grid-container">
