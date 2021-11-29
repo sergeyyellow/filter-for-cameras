@@ -31,9 +31,9 @@ export const filter = (minPrice = false, maxPrice = false, brands = []) => {
                     if (i == 0) {
                         request += '?' + arr[i];
                     } else if (i == arr.length - 1) {
-                        request += '&amp;' + arr[i];
+                        request += '&' + arr[i];
                     } else {
-                        request += '&amp;' + arr[i];
+                        request += '&' + arr[i];
                     }
                 }
             }
