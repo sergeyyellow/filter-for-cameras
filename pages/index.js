@@ -6,7 +6,8 @@ import { filter } from './api/filter'
 import FilterBlock from '../components/filter-block/filter-block'
 import CardBlockContainer from '../components/card-block-container/card-block-container'
 
-export const getStaticProps = async () => {
+// Receiving data on the server-side
+export const getServerSideProps = async () => {
   try {
     let response = await filter()
 
