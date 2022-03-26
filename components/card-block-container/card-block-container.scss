@@ -1,29 +1,29 @@
 .card-block-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 
-    @media (max-width: 1399px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  @media (max-width: 1399px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    @media (max-width: 1199px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    @media (max-width: 809px) {
-        gap: 20px;
-    }
+  @media (max-width: 809px) {
+    gap: 20px;
+  }
 
-    @media (max-width: 681px) {
-        grid-template-columns: 1fr;
-    }
+  @media (max-width: 681px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .product-not-found-text {
-    font-size: 18px;
+  font-size: 18px;
 
-    @media (max-width: 681px) {
-        margin: 0 20px;
-    }
+  @media (max-width: 681px) {
+    margin: 0 20px;
+  }
 }

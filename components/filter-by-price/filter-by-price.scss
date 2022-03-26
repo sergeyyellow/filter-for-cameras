@@ -1,48 +1,48 @@
 .filter-by-price {
-    margin-top: 12px;
+  margin-top: 12px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    border: 1px solid #DBDBDB;
-    border-radius: 4px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
 
-    overflow: auto;
-    transition: .3s;
+  overflow: auto;
+  transition: 0.3s;
 
-    &:hover {
-        border: 1px solid #A7A7A7;
+  &:hover {
+    border: 1px solid #a7a7a7;
+  }
+
+  &.error {
+    border-color: #be2f33;
+  }
+
+  input[type='text'] {
+    &:first-child {
+      border: none;
+    }
+
+    &:last-child {
+      border-top: none;
+      border-right: none;
+      border-bottom: none;
     }
 
     &.error {
-        border-color: #BE2F33;
+      color: #be2f33;
     }
-
-    input[type="text"] {
-        &:first-child {
-            border: none;
-        }
-
-        &:last-child {
-            border-top: none;
-            border-right: none;
-            border-bottom: none;
-        }
-
-        &.error {
-            color: #BE2F33;
-        }
-    }
+  }
 }
 
 .error-text {
-    display: none;
-    margin-top: 4px;
+  display: none;
+  margin-top: 4px;
 
-    font-size: 12px;
-    color: #BE2F33;
+  font-size: 12px;
+  color: #be2f33;
 
-    &.visible {
-        display: block;
-    }
+  &.visible {
+    display: block;
+  }
 }

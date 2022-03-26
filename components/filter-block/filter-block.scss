@@ -1,92 +1,92 @@
 .filter-block {
+  @media (max-width: 809px) {
+    width: 224px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 681px) {
+    margin: 0 20px;
+  }
+
+  .total-goods-text {
+    font-size: 14px;
+    color: #898989;
+
     @media (max-width: 809px) {
-        width: 224px;
+      order: 1;
 
-        display: flex;
-        flex-direction: column;
+      margin-top: 24px;
+    }
+  }
+
+  .cameras-text {
+    font-weight: bold;
+    font-size: 32px;
+
+    margin-top: 5px;
+
+    @media (max-width: 809px) {
+      order: 0;
+      margin-top: 0;
+    }
+  }
+
+  .price-block {
+    margin: 13px 0 24px;
+
+    @media (max-width: 809px) {
+      order: 2;
+
+      margin-top: 18px;
     }
 
-    @media (max-width: 681px) {
-        margin: 0 20px;
+    .text {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .brand-block {
+    @media (max-width: 809px) {
+      order: 3;
     }
 
-    .total-goods-text {
-        font-size: 14px;
-        color: #898989;
+    .text {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
 
-        @media (max-width: 809px) {
-            order: 1;
+  .btn-apply {
+    width: max-content;
+    margin-top: 20px;
+    padding: 8px 14px;
 
-            margin-top: 24px;
-        }
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    @media (max-width: 809px) {
+      order: 4;
     }
 
-    .cameras-text {
-        font-weight: bold;
-        font-size: 32px;
-
-        margin-top: 5px;
-
-        @media (max-width: 809px) {
-            order: 0;
-            margin-top: 0;
-        }
+    &:hover {
+      border: 1px solid #a7a7a7;
     }
 
-    .price-block {
-        margin: 13px 0 24px;
+    &.locked {
+      opacity: 0.7;
+      cursor: not-allowed;
 
-        @media (max-width: 809px) {
-            order: 2;
-
-            margin-top: 18px;
-        }
-
-        .text {
-            font-weight: bold;
-            font-size: 16px;
-        }
+      &:hover {
+        border-color: #dbdbdb;
+      }
     }
-
-    .brand-block {
-        @media (max-width: 809px) {
-            order: 3;
-        }
-
-        .text {
-            font-weight: bold;
-            font-size: 16px;
-        }
-    }
-
-    .btn-apply {
-        width: max-content;
-        margin-top: 20px;
-        padding: 8px 14px;
-
-        border: 1px solid #DBDBDB;
-        box-sizing: border-box;
-        border-radius: 8px;
-
-        font-size: 14px;
-        cursor: pointer;
-        transition: .3s;
-
-        @media (max-width: 809px) {
-            order: 4;
-        }
-
-        &:hover {
-            border: 1px solid #A7A7A7;
-        }
-
-        &.locked {
-            opacity: .7;
-            cursor: not-allowed;
-
-            &:hover {
-                border-color: #DBDBDB;
-            }
-        }
-    }
+  }
 }

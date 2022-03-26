@@ -1,100 +1,100 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 
-	&::selection {
-		background-color: #808080;
-		color: #FFFFFF;
-	}
+  &::selection {
+    background-color: #808080;
+    color: #ffffff;
+  }
 }
 
 html,
 body {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 
-	font-family: Montserrat, sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
 
-	color: #1B1B1B;
+  color: #1b1b1b;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 p {
-	margin: 0;
+  margin: 0;
 }
 
 ul {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 
-	list-style: none;
+  list-style: none;
 }
 
 input {
-	outline: none;
+  outline: none;
 
-	&[type="text"] {
-		width: 100%;
-		height: 42px;
+  &[type='text'] {
+    width: 100%;
+    height: 42px;
 
-		font-size: 14px;
-		padding: 10px 12px;
+    font-size: 14px;
+    padding: 10px 12px;
 
-		border: 1px solid #DBDBDB;
-	}
+    border: 1px solid #dbdbdb;
+  }
 
-	&[type="checkbox"] {
-		display: none;
-		margin: 0;
+  &[type='checkbox'] {
+    display: none;
+    margin: 0;
 
-		&:checked+label {
-			&::before {
-				background-color: #7993A6;
-				border-color: #7993A6;
-			}
-		}
+    &:checked + label {
+      &::before {
+        background-color: #7993a6;
+        border-color: #7993a6;
+      }
+    }
 
-		&+label {
-			position: relative;
-			font-size: 14px;
+    & + label {
+      position: relative;
+      font-size: 14px;
 
-			padding-left: 27px;
+      padding-left: 27px;
 
-			transition: .3s;
-			cursor: pointer;
+      transition: 0.3s;
+      cursor: pointer;
 
-			&:hover {
-				&::before {
-					border-color: #7993A6;
-				}
-			}
+      &:hover {
+        &::before {
+          border-color: #7993a6;
+        }
+      }
 
-			&::before {
-				content: '';
+      &::before {
+        content: '';
 
-				position: absolute;
-				top: 0;
-				left: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
 
-				display: block;
-				width: 18px;
-				height: 18px;
+        display: block;
+        width: 18px;
+        height: 18px;
 
-				background: url('../public/checkmark.svg') center no-repeat;
-				background-position-y: 3px;
+        background: url('../public/checkmark.svg') center no-repeat;
+        background-position-y: 3px;
 
-				border: 1px solid #D0D0D0;
-				box-sizing: border-box;
-				border-radius: 4px;
+        border: 1px solid #d0d0d0;
+        box-sizing: border-box;
+        border-radius: 4px;
 
-				transition: .3s;
-			}
-		}
-	}
+        transition: 0.3s;
+      }
+    }
+  }
 }
